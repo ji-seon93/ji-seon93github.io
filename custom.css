@@ -1,0 +1,28 @@
+/*
+Theme Name: Worthy - Free Powerful Theme by HtmlCoder
+Author:HtmlCoder
+Author URI:http://www.htmlcoder.me
+Version:1.0.0
+Created:November 2014
+License: Creative Commons Attribution 3.0 License (https://creativecommons.org/licenses/by/3.0/)
+File Description: Place here your custom CSS styles
+*/
+
+
+/*드래그시 색상 변경*/
+
+ ::-moz-selection {
+      background-color: #ad81f5;
+	  
+	  
+   }
+   ::selection {
+       background-color:  #ad81f5;
+	   
+   }
+   
+   
+   
+   /**/
+   .modal-body a{color:#f36965; text-decoration:none; font-weight:bold;}
+   .modal-body a:hover{color:#285192; ;text-decoration:none; font-weight:bold;}

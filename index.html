@@ -1,1294 +1,1118 @@
 <!DOCTYPE html>
-<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
-<!--[if !IE]><!-->
-<html lang="ko">
-<!--<![endif]-->
-	<head>
-		<meta charset="utf-8">
-		<title>SIM JI SEON PORTFOLIO</title>
-		<meta name="description" content="Worthy a Bootstrap-based, Responsive HTML5 Template">
-		<meta name="author" content="htmlcoder.me">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>빨간머리앤</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="https://github.com/hiun/NanumSquare/nanumsquare.css">
+    <link rel="shortcut icon" href="이미지주소">
+<link rel="shortcut icon " href="image/32x32x.png">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap" rel="stylesheet">
 
-		<!-- Mobile Meta -->
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+          body,
+        html {
+            clear: both;
+            position: relative;
+        }
 
-		<!-- Favicon -->
-		<link rel="shortcut icon" href="images/32x32.png">
+        body {
+            font-family: 'Nanum Square', sans-serif;
+            
+        }
+        a{text-decoration: none;}
+        /* 사이드메뉴*/
+        .collap {
+            position: fixed;
+            top: 0;
+            right: -110%;
+            z-index: 100;
+            background-color: rgba(247, 188, 188, 0.96);
+            width: 100vw;
+            height: 100vh;
+            box-sizing: border-box;
+            
+        }
 
-		<!-- Web Fonts -->
-		<link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700,300&amp;subset=latin,latin-ext"rel="stylesheet" type="text/css">
-		<link href="http://fonts.googleapis.com/css?family=Raleway:700,400,300" rel="stylesheet" type="text/css">
+        .collap.on {
+            right:0;
+        }
+        .collap li{clear: both;position: relative;margin-top: 50px;}
+        .collap li a{display: block;height: 32px;}
+        .collap li a.dep1{color: #fff;line-height: 3;padding-left: 3em;height: 42px;font-size: 1.2em;font-weight: bold;text-align: center;}
+        .collap li a.dep1:after{content: "▼";position: absolute;left: 60%;text-align: center;}
+        .collap li.on a.dep1:after{content: "▲";text-align: center;}
+        .collap li ul.dep2{display: none;visibility: visible;opacity: 1;width: 100%;height: 100vh;background-color: transparent;position: static;text-align: center;}
+        .collap li.on ul.dep2{display: block;visibility: visible;}
+        .collap li ul.dep2 li a{color: #fff;font-size: 1.2em;}
+      .hd {
+            clear: both;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 110;
+            width: 100%;
+            height: 90px;
+            background-color: rgba(0, 0, 0, 0);
+        }
 
-		<!-- Bootstrap core CSS -->
-		<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+        .hd.on {
+            background-color: rgba(252, 117, 164, 0.86);
+        }
 
-		<!-- Font Awesome CSS -->
-		<link href="fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
+     
+        .hd.off {
+            top: -120px;
+        }
 
-		<!-- Plugins -->
-		<link href="css/animations.css" rel="stylesheet">
+        .logo {
+            display: block;
+            width: 100px;
+            height: auto;
+            float: left;
+            margin-left: 5em;
+            margin-top: 2em;
+        }
 
-		<!-- Worthy core CSS file -->
-		<link href="css/style.css" rel="stylesheet">
+        .logo img {
+            display: block;
+            width: 200%;
+        }
 
-		<!-- Custom css --> 
-		<link href="css/custom.css" rel="stylesheet">
+        .gnb {
+            float: left;
+             margin-top: 0.6em;
+            margin-left: 15em;
+        }
+
+        .gnb li {
+            float: left;
+            width: 140px;
+            position: relative;
+              padding: 1em;
+            line-height: 2.2;
+            font-size: 14px;
+            text-align: center;
+           
+        }
+
+        .gnb li a {
+            display: block;
+            
+            text-align: center;
+            padding: 1em;
+            line-height: 2.2;
+            font-size: 1.1em;
+             color: #fff;
+        }
+
+     
+        .gnb li a.dep1 {
+            color: #fff;
+            background-color: transparent;
+        }
+
+        .gnb li:hover a.dep1 {
+                background-color: transparent;
+            color: rgb(255, 121, 121);
+        }
+     
+        /* 서브메뉴*/
+         .dep2 {
+            width: 100%;
+            height: 0;
+            position: absolute;
+           visibility: hidden;
+            opacity: 0;
+        }
         
-       <!--스톱워치-->
-       <link rel="stylesheet" href="css/flipclock.css">
 
-		<!--영문폰트-->
-        <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
-		
-        <!--파비콘-->
-        <link rel="shortcut icon" type="image/x-icon" href="ico/favicon_32x32.png">
-		
-		<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-		<style>
-			
-			
-			
-@import url(http://fonts.googleapis.com/css?family=Noto+Sans);
-		body { font-family: 'Noto Sans', sans-serif; }
+        .gnb li:hover .dep2 {
+           
+            visibility: visible;
+            opacity: 1;
+        }
 
+    
+        .dep2 li {
+            clear: both;
+           
+            background-color:  rgba(245, 102, 102, 0.8);
+            width: 80%;
+            
+        }
 
-		</style>
+        .dep2 li a {
+            clear: both;
+            display: block;
+            color: #fff;
+            padding: 0.5em;
+            font-size: 0.9em;
+            
+        }
 
-		
-		
-	</head>
+        .dep2 li a:hover {
+            text-decoration: underline;
+       
+        }
 
-	<body class="no-trans">
-		<!-- scrollToTop -->
-		<!-- ================ -->
-		<div class="scrollToTop"><i class="icon-up-open-big"></i></div>
+        .lang {
+            display: block;
+            position: absolute;
+           top: 1.3em;
+            right: 15%;
+            z-index: 110;
+            width: 130px;
+            height: 42px;
+            border: 2px solid #fff;
+            color: #fff;
+            line-height: 3;
+        }
 
-		<!-- header start -->
-		<!-- ================ --> 
-		<header class="header fixed clearfix navbar navbar-fixed-top">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-4">
+        .lang.on {
+            height: 106px;
+        }
 
-						<!-- header-left start -->
-						<!-- ================ -->
-						<div class="header-left clearfix">
+        .this_lang {
+            display: block;
+          
+            width: 130px;
+            color: #fff;
+            line-height: 2.4;
+            padding: 0.6em;
+            background-image: url(image/lang_icon.png);
+             background-color: transparent;
+            background-repeat: no-repeat;
+            background-position: 0.5em center;
 
-							<!-- logo -->
-							<div class="logo smooth-scroll">
-								<a href="#banner"><img id="logo" src="images/r1.png" alt="Worthy"></a>
-							</div>
+        }
 
-							<!-- name-and-slogan -->
-							<div class="site-name-and-slogan smooth-scroll">
-								<div class="site-name" font-color="#fff" style="font-family: 'Righteous', cursive; font-size:28px;  " ><a href="#banner">SIM JI SEON</a></div>
-								<div class="site-slogan"> <font color="#8700fa">Web Publisher</font></div>
-							</div>
+        .this_lang:after {
+            content: "▼";
+            position: absolute;
+            right: 1em;
+        }
 
-						</div>
-						<!-- header-left end -->
+        .this_lang.on:after {
+            content: "▲";
+        }
 
-					</div>
-					<div class="col-md-8">
-
-						<!-- header-right start -->
-						<!-- ================ -->
-						<div class="header-right clearfix">
-
-							<!-- main-navigation start -->
-							<!-- ================ -->
-							<div class="main-navigation animated">
-
-								<!-- navbar start -->
-								<!-- ================ -->
-								<nav class="navbar navbar-default" role="navigation">
-									<div class="container-fluid">
-
-										<!-- Toggle get grouped for better mobile display -->
-										<div class="navbar-header">
-											<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
-												<span class="sr-only">Toggle navigation</span>
-												<span class="icon-bar"></span>
-												<span class="icon-bar"></span>
-												<span class="icon-bar"></span>
-											</button>
-										</div>
-
-										<!-- Collect the nav links, forms, and other content for toggling -->
-										<div class="collapse navbar-collapse scrollspy smooth-scroll" id="navbar-collapse-1">
-											<ul class="nav navbar-nav navbar-right">
-												<li class="active"><a href="#banner">Home</a></li>
-												<li><a href="#about">About</a></li>
-												<li><a href="#services">Introduce</a></li>
-												<li><a href="#portfolio">Portfolio</a></li>
-												<li><a href="#clients">Skills</a></li>
-												<li><a href="#contact">Contact</a></li>
-											</ul>
-										</div>
-
-									</div>
-								</nav>
-								<!-- navbar end -->
-
-							</div>
-							<!-- main-navigation end -->
-
-						</div>
-						<!-- header-right end -->
-
-					</div>
-				</div>
-			</div>
-		</header>
-		<!-- header end -->
-
-		<!-- banner start -->
-		<!-- ================ -->
-		<div id="banner" class="banner">
-			<div class="banner-image"></div>
-			<div class="banner-caption">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-8 col-md-offset-2 object-non-visible" data-animation-effect="fadeIn">
-							<h1 class="text-center"><font color="#404040" style="text-shadow:-5px 3px 0 white; font-family: 'Righteous', cursive;">I'm a </font><span style="font-family: 'Righteous', cursive;"> WEB Publisher</span></h1>
-							<p class="lead text-center work"></p>
-						</div>
-					</div>
-				</div>
-			</div>
-			    <div id="scroll">
-                <img src="images/scrolldown.gif" alt="">
-                <h6>scroll down</h6>
-            </div>
-		</div>
-		<!-- banner end -->
-
-		<!-- section start -->
-		<!-- ================ -->
-		<div class="section clearfix object-non-visible" data-animation-effect="fadeIn">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<h1 id="about" class="title text-center" style="font-family: 'Righteous', cursive;">About <span style="font-family: 'Righteous', cursive;">Me!</span></h1>
-						<p class="lead text-center"><font style="font-size:16px;"></font></p>
-						<div class="space"></div>
-						<div class="row">
-							<div class="col-md-6">
-								<img src="images/section-image-1.png" alt="">
-								<div class="space"></div>
-							</div>
-							<div class="col-md-6">
-                            	<h2 style="font-family: 'Righteous', cursive;">Introduce Myself</h2>
-								<p style="font-family: 'Roboto', sans-serif;">안녕하세요. 웹퍼블리셔 심지선 입니다 :)<br>
-                                 홈페이지 리뉴얼제작, 신규 제작, 웹기반(HTML5, CSS3, jQuery, 웹표준) 작업을 하였고, 포토샵과 일러스트를 이용한 시안 제작 및 커버제작, 아이콘제작 등을 하였습니다. <br>웹 디자인과 코딩을 함께 할 수 있는 웹 퍼블리셔 입니다.</p>
-								
-								<ul class="list-unstyled">
-									<li><i class="far fa-hand-point-right"></i> 심플하면서도 세련된 디자인</li>
-									<li><i class="far fa-hand-point-right"></i> 독창적이고 다이나믹한 디자인</li>
-									<li><i class="far fa-hand-point-right"></i>색의 조화가 잘 어우러진 디자인</li>
-									<li><i class="far fa-hand-point-right"></i> 웹 접근성을 고려한 디자인</li>
-									<li><i class="far fa-hand-point-right"></i> 트렌드를 선도하는 디자인을 추구합니다.</li>
-								</ul>
-							</div>
-						</div>
-						<div class="space"></div>
-						
-						<div class="row">
-							<div class="col-md-6 md6"> 
-                            	<h2 style="font-family: 'Righteous', cursive;">certificate</h2>
-								<ul class="list-unstyled">
-									<li><i class="far fa-stamp"></i>('20)</li>
-									<li><i class="fa fa-graduation-cap pr-10 text-colored"></i>GTQ1급 ('18)</li>
-									<li><i class="fa fa-graduation-cap pr-10 text-colored"></i> 사무자동화산업기사('14)</li>
-								</ul>
-							</div>
-                            
-							<div class="col-md-6">
-								<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-									<div class="panel panel-default">
-										<div class="panel-heading" role="tab" id="headingOne">
-											<h4 class="panel-title">
-												<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-													 #1 Birth
-												</a>
-											</h4>
-										</div>
-										<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-											<div class="panel-body">
-												이름 : 심지선<br> 생년월일 : 1993. 9. 6 (만 26세)
-											</div>
-										</div>
-									</div>
-									<div class="panel panel-default">
-										<div class="panel-heading" role="tab" id="headingTwo">
-											<h4 class="panel-title">
-												<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-													#2 Academic Background
-												</a>
-											</h4>
-										</div>
-										<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-											<div class="panel-body">
-												<p>스마트 기기 UI/UX 디자인 과정 수료</p>
-                                               <p> ('17)</p>
-                                                <p> 졸업 ('12)</p>
-											</div>
-										</div>
-									</div>
-									<div class="panel panel-default">
-										<div class="panel-heading" role="tab" id="headingThree">
-											<h4 class="panel-title">
-												<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-													#3 Carrer
-												</a>
-											</h4>
-										</div>
-										<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-											<div class="panel-body">
-												
-                                                
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- section end -->
-
-		<!-- section start -->
-		<!-- ================ -->
-		<div class="section translucent-bg bg-image-1 blue">
-			<div class="container object-non-visible" data-animation-effect="fadeIn">
-				<h1 id="services"  class="text-center title"><div class="infogra" style="font-family: 'Righteous', cursive;">Infographics</div></h1>
-				<div class="space"></div>
-				<div class="row">
-					<div class="col-sm-6">
-                    	<div class="mediawrap">
-						<div class="media">
-							<div class="media-body text-right">
-								<h4 class="media-heading">Profile</h4>
-								<p>&nbsp;&nbsp;&nbsp;1996년 1월 01일생 / 만 30세 / 처녀자리 / 쥐띠</p>
-                                
-                                
-							</div>
-							<div class="media-right">
-								<i class="fa fa-birthday-cake"></i>
-							</div>
-						</div>
-						<div class="media">
-							<div class="media-body text-right">
-								<h4 class="media-heading">Hobby</h4>
-								<p>음악, 영화, 소설, 시 등 어렸을 때 부터 문화 다방면에 관심이 많았습니다.</p>
-                              
-							</div>
-							<div class="media-right">
-								<i class="fa fa-paint-brush"></i>
-							</div>
-						</div>
-						<div class="media">
-							<div class="media-body text-right">
-								<h4 class="media-heading">Character</h4>
-								<p>사교성이 있고, 쾌활한 성격입니다. 창의적이고 생산적인 일을 좋아하며 좋아하는 일에 몰두하는 편입니다.</p>
-							</div>
-							<div class="media-right">
-								<i class="fa fa-star-o"></i>
-							</div>
-						</div>
-						<div class="media">
-							<div class="media-body text-right">
-								<h4 class="media-heading">Favorite Place</h4>
-								<p>서점에서 다양한 북 커버 디자인을 관찰하거나, 일상의 사소한 것에서 아이디어를 얻는 것을 좋아합니다.</p>
-							</div>
-							<div class="media-right">
-								<i class="fa fa-heart"></i>
-							</div>
-						</div>
-					</div>
-                    </div>
-					<div class="space visible-xs"></div>
-					<div class="col-sm-6">
-                    	<div class="mediawrap02">
-						<div class="media">
-							<div class="media-left">
-								<i class="fa fa-paper-plane"></i>
-							</div>
-							<div class="media-body">
-								<h4 class="media-heading">Vision</h4>
-								<p>다른 사람에게 새로운 영감을 줄 수 있는 디자이너가 되고 싶습니다.</p>
-							</div>
-						</div>
-						<div class="media">
-							<div class="media-left">
-								<i class="fa fa-institution"></i>
-							</div>
-						
-						<div class="media">
-							<div class="media-left">
-								<i class="fa fa-child"></i>
-							</div>
-							<div class="media-body">
-								<h4 class="media-heading">Life Style</h4>
-								<p>일찍 자고 일찍 일어나는 아침형인간. 하루를 길게 쓰는것을 좋아하며, 기쁜 마음가짐으로 하루를 시작합니다.</p>
-							</div>
-						</div>
-						<div class="media">
-							<div class="media-left">
-								<i class="fa fa-adjust"></i>
-							</div>
-							<div class="media-body">
-								<h4 class="media-heading">Color</h4>
-								<p>깨끗한 느낌의 흰색, 재치있는 느낌을 주는 노란색, 분위기를 더해주는 회색과 남색, 러블리한 보라색을 좋아합니다.</p>
-                              </div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+        .lang_list {
+    
+            display: block;
+            height: 0;
         
+            overflow: hidden;
+           
+         
+        }
+
+        .lang_list.on {
+            height: 64px;
+      
+        }
+
+        .lang_list li {
+            clear: both;
+            line-height: 32px;
+            text-indent: 0.8rem;
+          
+        }
+
+        .lang_list a {
+            display: block;
+             color: #fff;
+            width: 130px;
+    
+        }
+
+       
+        .lst_btn {
+            display: block;
+            position: absolute;
+            top: 0.5em;
+            right: 2%;
+            z-index: 50;
+            width: 48px;
+            height: 48px;
+            border: 2px solid #fff;
+            cursor: pointer;
+            box-sizing: border-box;
+        }
+
+        .lst_btn .line {
+            display: block;
+            height: 2px;
+            background-color: #fff;
+            position: absolute;
+            right: 0.5em;
+            z-index: 110;
+            transform: rotate(0deg);
+            transition-duration: 0.4s;
+        }
+
+  
+        .lst_btn .item1 {
+            width: 20px;
+            top: 16px;
+        }
+
+       
+        .lst_btn .item2 {
+            width: 30px;
+            top: 10px;
+        }
+
+        .lst_btn:hover .item1 {
+            width: 30px;
+        }
+
+        .lst_btn:hover .item2 {
+            width: 20px;
+        }
+
+        .lst_btn.on .item1 {
+            width: 30px;
+            transform: rotate(45deg);
+            top: 21px;
+        }
+
+        .lst_btn.on .item2 {
+            width: 30px;
+            transform: rotate(-45deg);
+            top: 21px;
+        }
+
+        /* 섹션 1영역 */
+        .vs1 {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+           /* clear: both;*/
+        }
+
+        .vs_list {
+            width: 400%;
+            height: 100vh;
+        }
+
+        .vs_list li {
+            width: 25%;
+            float: left;
+            height: 100vh;
+         
+        }
+
+        .vs_list li.on {
+            opacity: 1;
+        }
+
+        .vs_list li.item1 {
+            background-image: url(image/a1.png);
+               background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+          
+            
+        }
+
+        .vs_list li.item2 {
+            background-image: url(image/a2.png);
+               background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+          
+            
+        }
+
+        .vs_list li.item3 {
+            background-image: url(image/a3.png);
+               background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+          
+            
+            
+        }
+       
+
+
+          .vs_tit {
+            font-size: 4em;
+            color: #fff;
+           padding-top:4.4em;
+float: right;
+              padding-right: 100px;
+            transition-duration: 0.5s;
+            opacity: 1;
+            font-family: 'Nanum Brush Script', cursive;
+
+        }
         
-		<!-- section end -->
+     
 
-		<!-- section start -->
-		<!-- ================ -->
-		<div class="default-bg space blue">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2">
-						<div class="clock" style="margin:2em; width:100%;"></div>
-                        <p class="text-center" style="font-size:1.15em; color:#333;">오늘도 꿈을 향해 달려가는 중 입니다 :)</p>
-                        
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- section end -->
+        .vs_com {
+             
+            font-size: 2.2em;
+            color: #fff;
+            padding-top: 15em;
+            padding-left: 50px;
+            transition-duration: 0.5s;
+            opacity: 1;
+            font-family: 'Nanum Brush Script', cursive;
+            line-height: 5;
+           
+        }
+        .vs_com1{font-size: 1.4em;color: #fff;padding-top: 30em;padding-right: 50px;transition-duration: 0.5s;opacity: 1;}
 
-		<!-- section start -->
-		<!-- ================ -->
-		<div class="section">
-			<div class="container">
-				<h1 class="text-center title" id="portfolio" style="font-family: 'Righteous', cursive;">Portfolio</h1>
-				<div class="separator"></div>
+        .vs_more {
+            display: block;
+            width: 200px;
+        
+            text-align: center;
+        
+            padding: 0.7em ;
+            margin: 0.2em;
+            margin-top: 6.5em;
+            margin-left: 14em;
+            border: 3px solid #fff;
+            border-radius: 60px;
+            font-style:oblique;
+            font-size: 15px;
+            color: #fff;
+            transition-duration: 2s;
+            position: relative;
+        }
+        .vs_more:hover{color: #f70e0e;}
+        .more_arrow {display: block;
+            position: absolute;
+           
+            top: 0.8em;
+            right: 15px;
+            display: block;
+          
+            width: 39px;
+            height: 5px;
+            background-image: url(image/main_btn_arrow.png);
+            background-repeat: no-repeat;
+       /*     animation-name: arrow_ani;
+            animation-duration: 0.8s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;*/
+        }
+        @keyframes arrow_ani
+            0%{right: 30px;}
+            100%{right: 60px;}
+            
+            
+        
+        .btn_box1 {
+            width: 60px;
+            height: 24px;
+            position: absolute;
+            z-index: 25;
+            left: calc(50% - 30px);
+            bottom: 30px;
+        }
+
+      
+        .btn_box1 li {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+        }
+
+        .btn_box1 li.item1 {
+            left: 0;
+        }
+
+        .btn_box1 li.item2 {
+            left: 20px;
+        }
+
+        .btn_box1 li.item3 {
+            left: 40px;
+        }
+  .btn_box1 li.item {
+            left: 60px;
+        }
+        .btn_box1 li .btn {
+            display: block;
+            width: 10px;
+            height: 10px;
+            border: 2px solid #fff;
+            border-radius: 6px;
+            margin: 0 auto;
+            cursor: pointer;
+            box-sizing: border-box;
+            background: transparent;
+        }
+
+    
+        .btn_box1 li.on .btn {
+            background: #fff;
+        }
+
+
+
+        
+        /* page2영역*/
+        .vs_lst2{width: 800%;height: 100vh;}
+        .vs_lst2 li{width: 12.5%;height: 100vh;float: left;background-repeat: no-repeat;background-position: center center;background-size: cover;opacity: 1;}
+        .vs_lst2 li.item1{background-image: url(image/a4.png);}
+        .vs_lst2 li.item2{background-image: url(image/a5.png);}
+        .vs_lst2 li.item3{background-image: url(image/a3.png);}
+        .vs_lst2 li.item4{background-image: url(image/a6.png);}
+        .vs_lst2 li.item5{background-image: url(image/a7.png);}
+        .vs_lst2 li.item6{background-image: url(image/a8.png);}
+        .vs_lst2 li.item7{background-image: url(image/a9.png);}
+   
+        .tit_box{color: #fff;}
+        .tit_box a{color: #fff;}
+        .vs_lst2 li.on{opacity: 1;}
+        
+      /*  page1영역 타이틀*/
+        .vs_list li.on .vs_tit{padding-top: 8rem;opacity: 1;}
+        .vs_list li.on .vs_com{padding-top: 2.8rem;opacity: 1;}
+        .vs_list li.on .vs_more{margin-top: 3rem;opacity: 1;}
+        
+         /* page2 타이틀*/
+        .vs_lst2 li.on .vs_tit{padding-top:17rem;opacity: 1;}
+        .vs_lst2 li.on .vs_com{padding-top: 25rem;margin-left: 5rem; opacity: 1;}
+        .vs_lst2 li.on .vs_more{margin-top:  3rem;opacity: 1;}
+        
+       
+        
+   /*     page2의 하단버튼*/
+        .lr_btn_box{position: absolute;bottom: 0;left: 0;z-index: 25;}
+        .lr_btn_box li{float: left;width: 60px;height: 60px;border-left: 1px solid #f72d7b;border-right: 1px solid #f77b97;} 
+        .lr_btn{display: block;width: 60px;height: 60px;background-repeat: no-repeat;background-position: center center;background-color: #f70b66;cursor: pointer;}
+ 
+        .btn_box2{position: absolute;bottom: 0;left: 122px;width: 3000px;height: 58px;border-top: 1px solid #f7e8ed;}
+        .btn_box2 li{float: left;}
+        .btn_box2 li button{display: block;width: 300px;height: 58px;color: #f70b66;font-size: 16px;font-weight: bold;border-right: 1px solid #380418;text-align: center;cursor: pointer;}
+        .btn_box2 li.on button{color: #fff;font-size: 20px;}
+        
+       /* page3 영역*/
+        .annestory{position: relative;margin: 2% 0 7%;}
+        .annestory:before{display: block;position: absolute;top: 60%;right: 0;width: 50%;height: 1px;background: #cbc6b8;
+        clear: both;content: "";}
+        .annestory .inner_box{position: relative;    min-width: 1600px;margin: 0 auto;}
+        .annestory:after{display: block;position: absolute;top: 10%;left: 0;z-index: -1;width: 100%;height: 60%;background: #d4b1b1;content: '';}
+        .annestory .movie{position: relative;width: 73%;box-shadow: 20px 20px 15px 0 rgba(0,0,0,0.1);}
+        .annestory .movie .viewmovie{display: block;}
+        .annestory .movie .viewmovie img{width: 100%;margin-left: 20px;}
+        .annestory .movie .viewmovie img:last-child{margin-bottom: 20px;}
+        img{vertical-align: top;border: 0;}
+        .annestory .movie .viewmovie:before{display: block;position: absolute;top: 40%;z-index: 1;left: 50%;width: 124px;height: 124px;border: 3px solid #fff;border-radius: 200px; transform:translate(-50%, -50%);content: '';}
+        .annestory .movie .viewmovie:after{position: absolute;top: 40%;left: 50.5%;z-index: 1;width: 0;height: 0;border-top: 18px solid transparent;border-left: 25px solid #f3f1e7;border-bottom: 18px solid transparent;transform: translate(-50%,-50%);content: '';}
+        .annestory .movie .movie_frame{display: none;position: absolute;top: 0;left: 0;z-index: 10;width: 100%;height: 100%;}
+        .annestory .movie:after{display: block;position: absolute;top: 0;width: 100%;height: 100%;content: '';}
+        .annestory .txtbox{position: absolute;top: 50%;right: 0;transform: translateY(-50%);width: 27%;padding-left: 3.8%;box-sizing: border-box;}
+        .annestory .ttitle{font-size: 45px;color: #fff;line-height: 1.3;font-weight: bold;}
+        .annestory .movietxt{width: 95%;min-height: 95px;margin-top: 5%;padding-right: 20px;box-sizing: border-box;overflow-y: scroll;font-size: 14px;color: #fff;line-height: 1.7;}
+        .annestory .txt{position: absolute;top: 80%;right: 0;width: 27%;padding-left: 3.8%;box-sizing: border-box;font-size: 14px;color: #333;word-break: keep-all;}
+        .annestory a{font-size: 10px;color: #f70b66;bottom: 0;}
+        a{text-decoration: none;}
+        .annestory b{font-weight: 400;}
+/*페이지4*/
+
+        .thum_lst {
+            width: 100%;
+            height: 100%;
+           padding-top: 30px;
+        }
+
+        .thum_lst li {
+            width: 33.333333%;
+            height: 969px;
+            float: left;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            position: relative;
+        }
+
+        .thum_lst li.item1 {
+            background-image: url(image/a10.JPG);
+        }
+
+        .thum_lst li.item2 {
+            background-image: url(image/a11.png);
+        }
+
+        .thum_lst li.item3 {
+            background-image: url(image/a12.png);
+        }
+
+        .thum_lst li a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            padding-top: 6rem;
+            box-sizing: border-box;
+            transition-duration: 0.5s;
+        }
+
+        .thum_lst li a:hover {
+            background: rgba(0, 0, 0, 0);
+        }
+
+        .thum_tit {
+            color: #fff;
+            font-size: 2rem;
+            line-height: 3;
+            position: absolute;
+            top: 35%;
+            left: 0;
+            text-align: center;
+            width: 100%;
+        }
+
+        .thum_com {
+            color: #fff;
+            font-size: 1.1rem;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            text-align: center;
+            width: 100%;
+        }
+
+
+       
+        /* 푸터영역 */
+        .ft {
+            clear: both;
+            /*background-image: url(image/ftt.png);*/
+            background-color: rgba(248, 169, 169, 0.5);
+            padding: 3rem 0;
+          
+        }
+      
+
+        .fnb {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .fnb li {
+            float: left;
+           
+        }
+
+        .fnb li a {
+            display: block;
+            color: #333;
+            padding: 1rem;
+            padding-right: 3rem;
+        }
+
+        .fnb li:first-child a {
+            font-weight: bold;
+        }
+
+        .company {
+            clear: both;
+            width: 90%;
+            margin: 0 auto;
+            padding-top: 1rem;
+            word-break: break-all;
+        }
+
+        .company li {
+            color: #333;
+            padding-right: 2rem;
+                      
+
+        }
+
+        .company li.it1 {
+            float: left;
+            clear: none;
+            padding-right: 2rem;
+        }
+
+        .com_lst li {
+            float: left;
+            line-height: 2;
+            font-size: 0.85rem;
+        }
+
+        .copyright {
+            clear: both;
+            color: #333;
+            padding-left: 5em;
+            padding-top: 1em;
+        }
+
+    </style>
+   
+     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+     <script>
+        $(document).ready(function(){
+       var ck1 = true, ck2 = true;  
+        //펼침 메뉴의 열기/닫기 모션
+       $(".lst_btn").click(function(){
+             if(ck1){
+                 $(".collap").addClass("on");
+                 $(".lst_btn").addClass("on");
+             } else {
+                 $(".collap").removeClass("on");
+                 $(".lst_btn").removeClass("on");
+             }
+             ck1 = !ck1;
+       }); 
+       //펼침 메뉴의 서브메뉴 열기
+       $(".collap li").click(function(){
+           $(".collap li").removeClass("on");
+           $(this).addClass("on");
+       }); 
+       //언어에 대한 선택메뉴 모션
+       $(".this_lang").click(function(){
+           if(ck2) {
+              $(".lang_list").addClass("on"); 
+              $(".lang").addClass("on"); 
+              $(this).addClass("on");    
+           } else {
+              $(".lang_list").removeClass("on"); 
+              $(".lang").removeClass("on"); 
+              $(this).removeClass("on");    
+           }
+           ck2 = !ck2;
+       }); 
+       //스크롤시 메인 메뉴 모션    
+       $(window).scroll(function(){
+          var sc_top = parseInt($("body, html").scrollTop());
+            if(sc_top>=500 && sc_top<1200){
+                $(".hd").addClass("on");
+                $(".hd").removeClass("off");
+            } else if(sc_top>=1200) {
+                $(".hd").removeClass("on");
+                $(".hd").addClass("off");                      
+            } else {
+                $(".hd").removeClass("on");
+                $(".hd").removeClass("off");
+            } 
+       }); 
+        //패럴럭스 스크롤링
+        var wh = $(window).height();
+        var wd = $(window).width();
+        $(".sc_data").each(function(index){
+            $(this).attr("data-val", index*wh);
+        });
+        $(".sc_data").on("mousewheel DOMMouseScroll", function(e){
+            var secPos = parseInt($(this).attr("data-val"));
+            if(e.originalEvent.wheelDelta >= 0){
+                $("html, body").stop().animate({scrollTop:secPos - wh});
+                return false;
+            } else if(e.originalEvent.wheelDelta < 0) {
+                $("html, body").stop().animate({scrollTop:secPos + wh});
+                return false;
+            }
+        }); 
+        //page1 첫 번째 슬라이더
+        $(".btn_box1 li").click(function(i){
+            $(this).addClass("on");
+            $(this).siblings().removeClass("on");
+            var idx = $(this).index();
+            $(".vs_list").eq(idx).addClass("on");
+            $(".vs_list ").eq(idx).siblings().removeClass("on");
+            $(".vs_list ").not(":animated").animate({"margin-left": idx*-1*wd});
+        });
+            
+        
+        //page2 두 번째 슬라이더
+        var tar, tar_wd, tar_cnt;
+        tar_cnt = $(".vs_lst2 li").length;
+        tar_wd = parseInt($(".btn_fr2 li").width());
+
+        $(".btn_box2 li").click(function(e){
+            tar = $(this).index();        
+            for(var i=1;i<tar;i++){
+                $(".vs_lst2 li").eq(0).appendTo($(".vs_lst2"));
+                $(".btn_box2 li").eq(0).appendTo($(".btn_box2"));
+            }
+            nextAni();
+        });
+        function nextAni(){
+            $(".vs_lst2").not(":animated").animate({"margin-left":wd*-1}, 300, function(){
+                $(".vs_lst2 li").eq(0).appendTo($(".vs_lst2"));
+                $(".vs_lst2").css("margin-left", "0px");
+                $(".vs_lst2 li").eq(0).addClass("on");
+                $(".vs_lst2 li").eq(0).siblings().removeClass("on");
+                $(".btn_box2 li").eq(0).appendTo($(".btn_box2"));
+                $(".btn_box2 li").removeClass("on");
+                $(".btn_box2 li").eq(0).addClass("on");
+            });
+        }
+        function prevAni(){
+            $(".vs_lst2 li").eq(tar_cnt-1).prependTo($(".vs_lst2"));
+            $(".vs_lst2").css("margin-left", -wd+"px");
+            $(".vs_lst2").not(":animated").animate({"margin-left":"0px"}, 300, function(){
+                $(".vs_lst2 li").eq(0).addClass("on");
+                $(".vs_lst2 li").eq(0).siblings().removeClass("on");
+                $(".btn_box2 li").eq(tar_cnt-1).prependTo($(".btn_box2"));
+                $(".btn_box2 li").removeClass("on");
+                $(".btn_box2 li").eq(0).addClass("on");
+            });
+        }
+        $(".lr_btn_box li.left").click(function(){
+            prevAni();
+        });
+        $(".lr_btn_box li.right").click(function(){
+            nextAni();
+        });
+       });
+    </script>
+</head>
+<body>
+   <nav class="collap">
+        <!--       ul.main_menu>li*5>a.dep1-->
+        <ul class="main_menu">
+            <li>
+                <a href="#" class="dep1">홈</a>
+                <ul class="dep2">
+           
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="dep1">전시소개</a>
+                <ul class="dep2">
                 
-				<p class="lead text-center" style="font-size:16px;">그동안 작업했던 작업물입니다.<br>내용 적기</p>
-				<br>			
-				<div class="row object-non-visible" data-animation-effect="fadeIn">
-					<div class="col-md-12">
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="dep1">전시 미리보기</a>
+                <ul class="dep2">
+                   <ul class="dep2">
+                    <li><a href="preview.html#page1">미리보기</a></li>
+                    <li><a href="preview.html#page2">존구성</a></li>
+                    </ul>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="dep1">관람안내</a>
+                <ul class="dep2">
+                   <li><a href="information.html#page1">관람안내</a></li>
+                    <li><a href="information.html#page2">오시는 길</a></li>
+                </ul>
+            </li>
+            <li><a href="#" class="dep1">프로그램</a>
+                <ul class="dep2">
+                     <li><a href="program.html#page1">프로그램</a></li>
+                    <li><a href="program.html#page2">원데이워크숍</a></li>
+                    <li><a href="program.html#page3">라이브 페인팅</a></li>
+                    <li><a href="program.html#page4">아트토크</a></li>
+                    <li><a href="program.html#page5">후기</a></li>
+                </ul>
+            </li>
+        </ul>
 
-						<!-- isotope filters start -->
-						<div class="filters text-center">
-							<ul class="nav nav-pills">
-								<li class="active"><a href="#" data-filter="*">All</a></li>
-								<li><a href="#" data-filter=".web-design">PC Web </a></li>
-								<li><a href="#" data-filter=".app-development">Mobile</a></li>
-								<li><a href="#" data-filter=".site-building">Responsive</a></li>
-								<li><a href="#" data-filter=".edit">Editorial</a></li>
-							</ul>
-						</div>
-						<!-- isotope filters end -->
+    </nav>
+    <header class="hd">
+        <!-- a.logo>img-->
+        <a href="index.html" class="logo"><img src="./image/annelogo2.png" alt="로고"></a>
+        <nav class="gnb">
+            <ul class="main_menu">
+                         <li>
+                <a href="#" class="dep1">홈</a>
+                <ul class="dep2">
+           
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="dep1">전시소개</a>
+                <ul class="dep2">
+                
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="dep1">전시 미리보기</a>
+                
+                   <ul class="dep2">
+                    <li><a href="preview.html#page1">미리보기</a></li>
+                    <li><a href="preview.html#page2">존구성</a></li>
+                    </ul>
+                
+            </li>
+            <li>
+                <a href="#" class="dep1">관람안내</a>
+                <ul class="dep2">
+                   <li><a href="information.html#page1">관람안내</a></li>
+                    <li><a href="information.html#page2">오시는 길</a></li>
+                </ul>
+            </li>
+            <li><a href="#" class="dep1">프로그램</a>
+                <ul class="dep2">
+                     <li><a href="program.html#page1">프로그램</a></li>
+                    <li><a href="program.html#page2">원데이워크숍</a></li>
+                    <li><a href="program.html#page3">라이브 페인팅</a></li>
+                    <li><a href="program.html#page4">아트토크</a></li>
+                    <li><a href="program.html#page5">후기</a></li>
+                </ul>
+            </li>
+        </ul>
+        </nav>
+        <div class="lang">
+          
+            <button class="this_lang">한국어</button>
+            <ul class="lang_list">
+                <li class="item1"><a href="index_en.html">English</a></li>
+                <li class="item2"><a href="index_jp.html">China</a></li>
+            </ul>
+        </div>
+      
+        <div class="lst_btn">
+            <span class="line item1"></span>
+            <span class="line item2"></span>
+        </div>
 
-						<!-- portfolio items start -->
-						<div class="isotope-container row grid-space-20">
-							<div class="col-sm-6 col-md-3 isotope-item web-design">
-								<div class="image-box">
-									<div class="overlay-container">
-										<img src="images/portfolio-1.jpg" alt="">
-										<a class="overlay" data-toggle="modal" data-target="#project-1">
-											<i class="fa fa-search-plus"></i>
-											<span>Web Design</span>
-										</a>
-									</div>
-									<a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-1">빨간머리 앤 전시회 홈페이지 제작</a>
-								</div>
-								<!-- Modal -->
-								<div class="modal fade" id="project-1" tabindex="-1" role="dialog" aria-labelledby="project-1-label" aria-hidden="true">
-									<div class="modal-dialog modal-lg">
-										<div class="modal-content">
-											<div class="modal-header">
-												<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-												<h4 class="modal-title" id="project-1-label">OOO 홈페이지 제작</h4>
-											</div>
-											<div class="modal-body">
-												<h3>OOO 홈페이지 제작</h3>
-												<div class="row">
-													<div class="col-md-6">
-														<p>OOO 홈페이지 입니다.</p>
-														<p>기본 레이아웃으로 제작되었으며 서브 4개의 페이지로 구성되어 있습니다. <br>각 서브페이지까지 모두 존재하며, 각 게시판의 특색에 따라 제작되었습니다.
-                                                         그누보드 5를 이용하여 각각의 게시판을 구성하였고,컬러는 블랙, 화이트, 채도가 낮은 보라색을 사용하여
-                                                         안정적이고 고급스러운 분위기를 내도록 연출하였습니다. <br>
-                                                         웹 에이전시에서 가장 중요하게 다뤄져야 할 Contact 부분을 메인페이지에 Form 형식으로 넣어
-                                                         사용자가 쉽고 빠르게 업체와 컨택할 수 있도록 구성하였습니다.</p>
-                                                         
-                                                         <a href="http://OOO.github.io/m1" target="_blank"><p><i class="fa fa-desktop pr-10 text-colored"></i>OOO포트폴리오 바로가기</p></a>
-													</div>
-													<div class="col-md-6">
-														<img src="images/portfolio-1.jpg" alt="">
-													</div>
-												</div>
-											</div>
-											<div class="modal-footer">
-												<button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- Modal end -->
-							</div>
-							
-                            <div class="col-sm-6 col-md-3 isotope-item site-building">
-								<div class="image-box">
-									<div class="overlay-container">
-										<img src="images/portfolio-10.jpg" alt="">
-										<a class="overlay" data-toggle="modal" data-target="#project-10">
-											<i class="fa fa-search-plus"></i>
-											<span>ILLUSTRATOR</span>
-										</a>
-									</div>
-									<a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-10">OOO 디자인</a>
-								</div>
-								<!-- Modal -->
-								<div class="modal fade" id="project-10" tabindex="-1" role="dialog" aria-labelledby="project-10-label" aria-hidden="true">
-									<div class="modal-dialog modal-lg">
-										<div class="modal-content">
-											<div class="modal-header">
-												<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-												<h4 class="modal-title" id="project-10-label">청첩장 디자인</h4>
-											</div>
-											<div class="modal-body">
-												<h3>OOO 디자인</h3>
-												<div class="row">
-													<div class="col-md-6">
-														<p>OOO 청첩장 디자인 공모전 출품작 입니다.</p>
-														<p>신랑, 신부를 각각 앞면으로 사용할 수 있도록 독특한 구성을 하였습니다.<br>
-                                                        일러스트로 아기자기하고 산뜻한 분위기를 내려고 하였으며, 단순하고도 기억에 남는 청첩장을 디자인하고자 기획하였습니다.<br>
-                                                        신랑은 장미를 들고 신부에서 프로포즈하는 느낌을, 신부는 부케를 들고 설레어하는 모습을 그렸습니다.</p>
-                                                        <p>사용한 프로그램 : 일러스트레이터, 포토샵</p>
-													</div>
-													<div class="col-md-6">
-														<img src="images/portfolio-10.jpg" alt="">
-													</div>
-												</div>
-											</div>
-											<div class="modal-footer">
-												<button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- Modal end -->
-							</div>
+     
+    </header>
+    <section class="page sc_data" id="page1">
+  
+        <figure class="vs1">
+            <ul class="vs_list">
+                <li class="item1">
+                 <h2 class="vs_tit">"내 이름은 빨강머리 앤 ANNE"</h2>
+                  <p class="vs_com"> 
+                       안녕하세요,만나뵙게 되어 반갑습니다.</p> <p class="vs_com1">제이름은 끝에 'e'가 붙은 빨간머리 Anne이라고 해요,</p>
+                    <a href="#" class="vs_more">
+                        <span class="more_txt">Learn More</span>
+                        <span class="more_arrow"></span>
+                    </a>
+                </li>
+  <li class="item2">
+                    <h3 class="vs_tit"></h3>
+                    <p class="vs_com"></p>
+                    <a href="#" class="vs_more">
+                        <span class="more_txt"></span>
+                        <span class="more_arrow"></span>
+                    </a>
+                </li>
+                <li class="item3">
+                    <h3 class="vs_tit"></h3>
+                    <p class="vs_com"></p>
+                    <a href="" class="vs_more">
+                        <span class="more_txt"></span>
+                        <span class="more_arrow"></span></a>
+                </li>
+                <li class="item4">
+                    <h3 class="vs_tit"></h3>
+                    <p class="vs_com"></p>
+                    <a href="#" class="vs_more">
+                        <span class="more_txt"></span>
+                        <span class="more_arrow"></span></a>
+                </li>
+            </ul>
+            
+            
+            <ul class="btn_box1">
+                <li class="btn_fr item1 on"><button class="btn"></button></li>
+                <li class="btn_fr item2"><button class="btn"></button></li>
+                <li class="btn_fr item3"><button class="btn"></button></li>
+                <li class="btn_fr item4"><button class="btn"></button></li>
+            </ul>
+            <ul class="play_btn">
+                <li class="item5"><button class="btn"></button></li>
+            </ul>
+        </figure>
+    </section>
+     <section class="page sc_data" id="page2">
+<!-- figure.vs2>ul.vs_lst2>li.item$*7-->
+       
+     <figure class="vs2">
+          <ul class="vs_lst2">
+              <li class="item1 on">
+                 <div class="tit_box">
+                      <h3 class="vs_tit">Chapter 1. 불쌍한 고아소녀 
+    </h3>
+                      <p class="vs_com">에이번리의 초록 지붕 집에 오기 전까지 앤에게는 무슨 일이 있었을까?
+긍정의 아이콘이 된 앤이지만, <br>실은 열 살도 채 되지 않은 나이에 아기들을 돌보면서 누구보다 힘든 시간을 홀로 버텨왔던 앤의 유년 이야기. 
 
-							
-							
-							<div class="col-sm-6 col-md-3 isotope-item web-design">
-								<div class="image-box">
-									<div class="overlay-container">
-										<img src="images/portfolio-3.jpg" alt="">
-										<a class="overlay" data-toggle="modal" data-target="#project-3">
-											<i class="fa fa-search-plus"></i>
-											<span>Web Design</span>
-										</a>
-									</div>
-									<a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-3">OOO 홈페이지 리뉴얼</a>
-								</div>
-								<!-- Modal -->
-								<div class="modal fade" id="project-3" tabindex="-1" role="dialog" aria-labelledby="project-3-label" aria-hidden="true">
-									<div class="modal-dialog modal-lg">
-										<div class="modal-content">
-											<div class="modal-header">
-												<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-												<h4 class="modal-title" id="project-3-label">NIKE 홈페이지 리뉴얼</h4>
-											</div>
-											<div class="modal-body">
-												<h3>OOO 홈페이지 리뉴얼</h3>
-												<div class="row">
-													<div class="col-md-6">
-														<p>원페이지 사이트로 제작한 OOO 홈페이지 입니다.</p>
-														<p>OOO의 역동적인 분위기를 최대한 담고자 광고 동영상을 첫 페이지에 삽입하였고, OOO의 제품을 돋보이게 하기 위하여 전체적인 컬러는 블랙&화이트로 선정하였습니다. <br>각각의 광고 배너들은 전부 포토샵으로 합성 작업을 하였고, 제이쿼리로 더 많은 제품을 보일 수 있도록 하였습니다. OOO의 제품을 판매하는 홈페이지라기 보다, 브랜드를 돋보이게하는 홍보 홈페이지입니다.</p>
-                                                        <a href="http://OOO.github.io/m1" target="_blank"><p><i class="fa fa-desktop pr-10 text-colored"></i>NIKE 포트폴리오 바로가기</p></a>
-													</div>
-													<div class="col-md-6">
-														<img src="images/portfolio-3.jpg" alt="">
-													</div>
-												</div>
-											</div>
-											<div class="modal-footer">
-												<button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- Modal end -->
-							</div>
-							
-							<div class="col-sm-6 col-md-3 isotope-item site-building">
-								<div class="image-box">
-									<div class="overlay-container">
-										<img src="images/portfolio-4.jpg" alt="">
-										<a class="overlay" data-toggle="modal" data-target="#project-4">
-											<i class="fa fa-search-plus"></i>
-											<span>ILLUSTRATOR</span>
-										</a>
-									</div>
-									<a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-4">팝아트 제작</a>
-								</div>
-								<!-- Modal -->
-								<div class="modal fade" id="project-4" tabindex="-1" role="dialog" aria-labelledby="project-4-label" aria-hidden="true">
-									<div class="modal-dialog modal-lg">
-										<div class="modal-content">
-											<div class="modal-header">
-												<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-												<h4 class="modal-title" id="project-4-label">OOO  홈페이지 리뉴얼</h4>
-											</div>
-											<div class="modal-body">
-												<h3>OOO  홈페이지 리뉴얼</h3>
-												<div class="row">
-													<div class="col-md-6">
-														<p>OOO  홈페이지 리뉴얼</p>
-														<p>팝아트의 역동적인 분위기를 강렬한 색깔을 사용하여 표현하였고, 어울리는 글귀를 넣어 재미를 더했습니다.</p>
-                                                        <p>사용한 프로그램 : 일러스트레이터</p>
-													</div>
-													<div class="col-md-6">
-														<img src="images/portfolio-4.jpg" alt="">
-													</div>
-												</div>
-											</div>
-											<div class="modal-footer">
-												<button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- Modal end -->
-							</div>
-							 <div class="col-sm-6 col-md-3 isotope-item app-development">
-								<div class="image-box">
-									<div class="overlay-container">
-										<img src="images/portfolio-2.jpg" alt="">
-										<a class="overlay" data-toggle="modal" data-target="#project-2">
-											<i class="fa fa-search-plus"></i>
-											<span>PHOTOSHOP</span>
-										</a>
-									</div>
-									<a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-2">OOO  홈페이지 리뉴얼</a>
-								</div>
-								<!-- Modal -->
-								<div class="modal fade" id="project-2" tabindex="-1" role="dialog" aria-labelledby="project-2-label" aria-hidden="true">
-									<div class="modal-dialog modal-lg">
-										<div class="modal-content">
-											<div class="modal-header">
-												<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-												<h4 class="modal-title" id="project-2-label">OOO  홈페이지 리뉴얼</h4>
-											</div>
-											<div class="modal-body">
-												<h3>OOO  홈페이지 리뉴얼</h3>
-												<div class="row">
-													<div class="col-md-6">
-														<p>OOO  홈페이지 리뉴얼입니다.</p>
-														<p>"해가 떠오른다" 라는 느낌을 그림으로 표현하기 보다 글자로 표현하여 약간의 재미를 주었습니다. 전체적으로 한국화 느낌을 내려 하였고, 컬러는 채도가 낮은 빨간색과 블랙, 화이트로 선정하여 작업했습니다. </p>
-                                                        <p>사용한 프로그램 : 포토샵</p>
-													</div>
-													<div class="col-md-6">
-														<img src="images/portfolio-2.jpg" alt="">
-													</div>
-												</div>
-											</div>
-											<div class="modal-footer">
-												<button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- Modal end -->
-							</div>
-							
-							<div class="col-sm-6 col-md-3 isotope-item app-development">
-								<div class="image-box">
-									<div class="overlay-container">
-										<img src="images/portfolio-15.jpg" alt="">
-										<a class="overlay" data-toggle="modal" data-target="#project-15">
-											<i class="fa fa-search-plus"></i>
-											<span>PHOTOSHOP</span>
-										</a>
-									</div>
-									<a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-15">OOO  홈페이지 리뉴얼</a>
-								</div>
-								<!-- Modal -->
-								<div class="modal fade" id="project-15" tabindex="-1" role="dialog" aria-labelledby="project-15-label" aria-hidden="true">
-									<div class="modal-dialog modal-lg">
-										<div class="modal-content">
-											<div class="modal-header">
-												<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-												<h4 class="modal-title" id="project-15-label">OOO  홈페이지 리뉴얼</h4>
-											</div>
-											<div class="modal-body">
-												<h3>OOO  홈페이지 리뉴얼</h3>
-												<div class="row">
-													<div class="col-md-6">
-														<p>OOO  홈페이지 리뉴얼입니다.</p>
-														<p>재즈 하면 떠오르는 악기인 색소폰에 와인이 가득 찬 모습을 형상화하고 싶었습니다. 그리고 빨간 암막이 걷히면 무대가 시작되듯 색소폰이 있는 그 자리가 무대임을 표현하고자 하였습니다. 전체적으로 와인빛깔 컬러를 사용하였으며 액체 느낌을 최대한 살려서 음악의 음율과 감각적인 분위기를 표현하고 싶었습니다.</p>
-                                                        <p>사용한 프로그램 : 포토샵</p>
-													</div>
-													<div class="col-md-6">
-														<img src="images/portfolio-15.jpg" alt="">
-													</div>
-												</div>
-											</div>
-											<div class="modal-footer">
-												<button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- Modal end -->
-							</div>
-                            
-							<div class="col-sm-6 col-md-3 isotope-item web-design">
-								<div class="image-box">
-									<div class="overlay-container">
-										<img src="images/portfolio-6.jpg" alt="">
-										<a class="overlay" data-toggle="modal" data-target="#project-6">
-											<i class="fa fa-search-plus"></i>
-											<span>Web Design</span>
-										</a>
-									</div>
-									<a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-6">OOO  홈페이지 리뉴얼</a>
-								</div>
-								<!-- Modal -->
-								<div class="modal fade" id="project-6" tabindex="-1" role="dialog" aria-labelledby="project-6-label" aria-hidden="true">
-									<div class="modal-dialog modal-lg">
-										<div class="modal-content">
-											<div class="modal-header">
-												<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-												<h4 class="modal-title" id="project-6-label">OOO 홈페이지 리뉴얼(반응형)</h4>
-											</div>
-											<div class="modal-body">
-												<h3>OOO 홈페이지 리뉴얼 (반응형)</h3>
-												<div class="row">
-													<div class="col-md-6">
-														<p>OOO  반응형 리뉴얼 홈페이지 입니다.</p>
-														<p>4단 레이아웃으로 나누어져있는 제이쿼리를 이용하여 제작하였고, 각 섹션에 톤온톤 느낌을 주기위해 Opacity를 제일 왼쪽부터 0, 20, 40, 60%으로 주어 단계별로 차차 어두운 느낌을 살짝 주었습니다. 각 서브 메뉴에 들어가보면 제품이 나열되어 소개되어있고, 홈페이지 창 사이즈를 줄이면 그에 맞게 반응형으로 변하게 됩니다.</p>
-                                                        <p>광고 배너나 메인 이미지는 모두 포토샵으로 합성, 컬러변경, 신규제작 하였으며, 메인컬러와 잘 어울리도록 제작하는 것을 중점적으로 염두하여 작업하였습니다.</p>
-                                                        <a href="http://OOO.github.io/r3" target="_blank"><p><i class="fa fa-desktop pr-10 text-colored"></i>OOO  포트폴리오 바로가기</p></a>
-                                                        
-													</div>
-													<div class="col-md-6">
-														<img src="images/portfolio-6.jpg" alt="">
-													</div>
-												</div>
-											</div>
-											<div class="modal-footer">
-												<button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- Modal end -->
-							</div>
-							
-                            <div class="col-sm-6 col-md-3 isotope-item app-development">
-								<div class="image-box">
-									<div class="overlay-container">
-										<img src="images/portfolio-13.jpg" alt="">
-										<a class="overlay" data-toggle="modal" data-target="#project-13">
-											<i class="fa fa-search-plus"></i>
-											<span>PHOTOSHOP</span>
-										</a>
-									</div>
-									<a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-13">보령머드축제 홈페이지</a>
-								</div>
-								<!-- Modal -->
-								<div class="modal fade" id="project-13" tabindex="-1" role="dialog" aria-labelledby="project-13-label" aria-hidden="true">
-									<div class="modal-dialog modal-lg">
-										<div class="modal-content">
-											<div class="modal-header">
-												<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-												<h4 class="modal-title" id="project-5-label">보령머드축제 홈페이지</h4>
-											</div>
-											<div class="modal-body">
-												<h3>보령머드축제 홈페이지</h3>
-												<div class="row">
-													<div class="col-md-6">
-                                                    	<p>보령머드축제 포스터 공모전 출품작입니다.</p>
-														<p>페스티벌 특성상 유쾌하고 역동적인 이미지를 표현해야 하므로, 팡팡 터지는 느낌의 동그라미를 전체적으로 많이 사용했습니다. 축제 시기가 여름인만큼 파란색 계통을 사용하여 시원한 느낌을 줄 수 있도록 하였고, 머드가 묻은 손으로 종이를 닦아내어 축제의 한 부분을 미리 보는듯한 느낌을 이미지에 주었습니다. </p>
-                                                        <p>사용한 프로그램 : 포토샵</p>
-													</div>
-													<div class="col-md-6">
-														<img src="images/portfolio-13.jpg" alt="">
-													</div>
-												</div>
-											</div>
-											<div class="modal-footer">
-												<button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- Modal end -->
-							</div>
-                            
-                            
-							<div class="col-sm-6 col-md-3 isotope-item site-building">
-								<div class="image-box">
-									<div class="overlay-container">
-										<img src="images/portfolio-7.jpg" alt="">
-										<a class="overlay" data-toggle="modal" data-target="#project-7">
-											<i class="fa fa-search-plus"></i>
-											<span>ILLUSTRATOR</span>
-										</a>
-									</div>
-									<a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-7">나의 로고 제작</a>
-								</div>
-								<!-- Modal -->
-								<div class="modal fade" id="project-7" tabindex="-1" role="dialog" aria-labelledby="project-7-label" aria-hidden="true">
-									<div class="modal-dialog modal-lg">
-										<div class="modal-content">
-											<div class="modal-header">
-												<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-												<h4 class="modal-title" id="project-7-label">나의 로고 제작</h4>
-											</div>
-											<div class="modal-body">
-												<h3>나의 로고 제작</h3>
-												<div class="row">
-													<div class="col-md-6">
-														<p>나만의 로고를 제작하였습니다.</p>
-														<p>별명인 눈사람을 싸인형태로 변경하고 많이 단순화하여 특별하고도 독특한 나만의 로고를 제작하였습니다. 점 3개는 눈사람이 입고있는 옷의 단추 3개를 의미하며 눈사람이 그려진 선 끝에 마우스 포인터처럼 보이는 일러스트 선택툴을 넣어 무언가를 컴퓨터로 작업하는 디자이너의 느낌을 줄 수 있도록 하였습니다.</p>
-                                                        <p>작업 프로그램 : 일러스트레이터</p>
-													</div>
-													<div class="col-md-6">
-														<img src="images/portfolio-7.jpg" alt="">
-													</div>
-												</div>
-											</div>
-											<div class="modal-footer">
-												<button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- Modal end -->
-							</div>
-                            <div class="col-sm-6 col-md-3 isotope-item app-development">
-								<div class="image-box">
-									<div class="overlay-container">
-										<img src="images/portfolio-5.jpg" alt="">
-										<a class="overlay" data-toggle="modal" data-target="#project-5">
-											<i class="fa fa-search-plus"></i>
-											<span>PHOTOSHOP</span>
-										</a>
-									</div>
-									<a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-5">영화 OOO포스터 공모전</a>
-								</div>
-								<!-- Modal -->
-								<div class="modal fade" id="project-5" tabindex="-1" role="dialog" aria-labelledby="project-5-label" aria-hidden="true">
-									<div class="modal-dialog modal-lg">
-										<div class="modal-content">
-											<div class="modal-header">
-												<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-												<h4 class="modal-title" id="project-5-label">영화 OOO 포스터 공모전)</h4>
-											</div>
-											<div class="modal-body">
-												<h3>영화 OOO 포스터 공모전(우수상)</h3>
-												<div class="row">
-													<div class="col-md-6">
-														<p>디자인레이스에서 주최한 영화 OOO 포스터 공모전 수상작입니다.</p>
-														<p>작품 의도는 영화 OOO의 홍보 문구인 "거짓말이 나를 잡아먹기 시작했다" 에서 영감을 얻어 거짓말을 하는 입 속에 가시가 돋아나는 표현을 하였고, 흔히 거짓말을 새빨간 거짓말이라고 표현하듯이 거짓말을 하는 입의 색깔을 붉은 색으로 표현하여 거짓말을 할때의 어두운 면을 표현하였습니다.</p>
-                                                        <p>영문포스터 1개, 한글포스터 2개 총 세가지 작품을 출품하였는데, 그 중 영문 포스터가 우수상을 수상하였습니다.</p>
-                                                        <p>사용한 프로그램 : 포토샵, 일러스트레이터</p>
-													</div>
-													<div class="col-md-6">
-														<img src="images/portfolio-5.jpg" alt="">
-													</div>
-												</div>
-											</div>
-											<div class="modal-footer">
-												<button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- Modal end -->
-							</div>
-							
-                            
-                            
-							<div class="col-sm-6 col-md-3 isotope-item web-design">
-								<div class="image-box">
-									<div class="overlay-container">
-										<img src="images/portfolio-8.jpg" alt="">
-										<a class="overlay" data-toggle="modal" data-target="#project-8">
-											<i class="fa fa-search-plus"></i>
-											<span>Web Design</span>
-										</a>
-									</div>
-									<a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-8">OOO 홈페이지 리뉴얼 시안</a>
-								</div>
-								<!-- Modal -->
-								<div class="modal fade" id="project-8" tabindex="-1" role="dialog" aria-labelledby="project-8-label" aria-hidden="true">
-									<div class="modal-dialog modal-lg">
-										<div class="modal-content">
-											<div class="modal-header">
-												<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-												<h4 class="modal-title" id="project-8-label">OOO 홈페이지 리뉴얼 시안</h4>
-											</div>
-											<div class="modal-body">
-												<h3>OOO 홈페이지 리뉴얼 시안</h3>
-												<div class="row">
-													<div class="col-md-6">
-														<p>OOO 리뉴얼 메인페이지 시안입니다.</p>
-														<p>기존의 OOO 홈페이지에 문제점이 많아 그 점을 보완하고 트렌드에 맞추어서 시안을 제작하였습니다. 사용자가 OOO 홈페이지를 방문하는 가장 큰 이유인 배달서비스를 가장 눈에 띄는 곳에 배치하여 접근성이 용이하도록 레이아웃을 디자인하였습니다. 또한 네비게이션의 컬러가 진한 회색이기 때문에 자칫 어두워 질 수 있는 분위기를 상쇄시키고자 배경에 OOO 음식 사진을 블러처리하여 음식이 주는 따뜻한 분위기를 조성하였습니다. 만약 홈페이지로 제작하게 된다면 다양한 제이쿼리들로 패스트푸드점의 빠르고 역동적인 분위기를 낼 것이고, OOO의 브랜드가 가지고 있는 블랙,레드,옐로우,그린의 색상의 범주에서 크게 벗어나지 않도록 제작하게 될 것입니다.</p>
-                                                        <p>사용한 프로그램 : 포토샵</p>
-													</div>
-													<div class="col-md-6">
-														<img src="images/portfolio-8.jpg" alt="">
-													</div>
-												</div>
-											</div>
-											<div class="modal-footer">
-												<button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- Modal end -->
-							</div>
-							
-                            <div class="col-sm-6 col-md-3 isotope-item app-development">
-								<div class="image-box">
-									<div class="overlay-container">
-										<img src="images/portfolio-12.jpg" alt="">
-										<a class="overlay" data-toggle="modal" data-target="#project-12">
-											<i class="fa fa-search-plus"></i>
-											<span>PHOTOSHOP</span>
-										</a>
-									</div>
-									<a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-12">OOO 포스터 공모전 출품작</a>
-								</div>
-								<!-- Modal -->
-								<div class="modal fade" id="project-12" tabindex="-1" role="dialog" aria-labelledby="project-12-label" aria-hidden="true">
-									<div class="modal-dialog modal-lg">
-										<div class="modal-content">
-											<div class="modal-header">
-												<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-												<h4 class="modal-title" id="project-5-label">OOO포스터 공모전 출품작</h4>
-											</div>
-											<div class="modal-body">
-												<h3>OOO 포스터 공모전 출품작</h3>
-												<div class="row">
-													<div class="col-md-6">
-														<p>OOO 포스터 공모전 출품작입니다.</p>
-														<p>무용하면 떠오르는 발레리나의 모습을 메인 사진으로 선택하였고 단아하고 기품있는 분위기를 연출하고자 회색조로 포스터를 제작하였습니다. 자칫 단조로울 수 있는 이미지에 슬로건 글귀를 넣어 포인트를 주었습니다.</p>
-                                                        <p>사용한 프로그램 : 포토샵</p>
-													</div>
-													<div class="col-md-6">
-														<img src="images/portfolio-12.jpg" alt="">
-													</div>
-												</div>
-											</div>
-											<div class="modal-footer">
-												<button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- Modal end -->
-							</div>
-                            
-							<div class="col-sm-6 col-md-3 isotope-item web-design">
-								<div class="image-box">
-									<div class="overlay-container">
-										<img src="images/portfolio-9.jpg" alt="">
-										<a class="overlay" data-toggle="modal" data-target="#project-9">
-											<i class="fa fa-search-plus"></i>
-											<span>Web Design</span>
-										</a>
-									</div>
-									<a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-9">기업 홈페이지 리뉴얼</a>
-								</div>
-								<!-- Modal -->
-								<div class="modal fade" id="project-9" tabindex="-1" role="dialog" aria-labelledby="project-9-label" aria-hidden="true">
-									<div class="modal-dialog modal-lg">
-										<div class="modal-content">
-											<div class="modal-header">
-												<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-												<h4 class="modal-title" id="project-9-label">기업 홈페이지 리뉴얼</h4>
-											</div>
-											<div class="modal-body">
-												<h3>기업 홈페이지 리뉴얼 제작 (반응형)</h3>
-												<div class="row">
-													<div class="col-md-6">
-														<p>기업의 맑고 세련된 분위기를 살려서 제작한 홈페이지입니다.</p>
-														<p>기업 브랜드의 컬러인 주황,하늘색의 계열을 포인트컬러로 사용하였고, 전체적으로 깨끗하게 보이기 위해 배경색을 모노톤으로 처리하였습니다. 또 지저분해 보이지 않도록 여백에 신경을 썼고, 제이쿼리를 이용하여 제품을 많이 설명할 수 있도록 구성하였습니다.</p>
-                                                         <a href="http://OOO.github.io/r1" target="_blank"><p><i class="fa fa-desktop pr-10 text-colored"></i>기업 포트폴리오 바로가기</p></a>
-													</div>
-													<div class="col-md-6">
-														<img src="images/portfolio-9.jpg" alt="">
-													</div>
-												</div>
-											</div>
-											<div class="modal-footer">
-												<button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- Modal end -->
-							</div>
-							
-                           
-                            
-							
-							<div class="col-sm-6 col-md-3 isotope-item web-design">
-								<div class="image-box">
-									<div class="overlay-container">
-										<img src="images/portfolio-11.jpg" alt="">
-										<a class="overlay" data-toggle="modal" data-target="#project-11">
-											<i class="fa fa-search-plus"></i>
-											<span>Web Design</span>
-										</a>
-									</div>
-									<a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-11">영화  홍보 홈페이지</a>
-								</div>
-								<!-- Modal -->
-								<div class="modal fade" id="project-11" tabindex="-1" role="dialog" aria-labelledby="project-11-label" aria-hidden="true">
-									<div class="modal-dialog modal-lg">
-										<div class="modal-content">
-											<div class="modal-header">
-												<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-												<h4 class="modal-title" id="project-11-label">영화  홍보 홈페이지</h4>
-											</div>
-											<div class="modal-body">
-												<h3>영화 홍보 홈페이지 (반응형)</h3>
-												<div class="row">
-													<div class="col-md-6">
-														<p>영화 너의 이름은 을 홍보하고 광고하기 위한 홈페이지입니다.</p>
-														<p>영화의 이미지와 줄거리를 소개해 줌으로써 궁금증을 유발하고, 마지막에 관람까지 이어질 수 있도록 영화관의 약도를 넣어 제작하였습니다.<br>
-                                                        광고용 페이지로 제작하여 특정 컨텐츠를 홍보하고 싶을 때 응용 할 수 있습니다. </p>
-                                                        <a href="http://dreaming-of.net/project4" target="_blank"><p><i class="fa fa-desktop pr-10 text-colored"></i>영화명 포트폴리오 바로가기</p></a>
-													</div>
-													<div class="col-md-6">
-														<img src="images/portfolio-11.jpg" alt="">
-													</div>
-												</div>
-											</div>
-											<div class="modal-footer">
-												<button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- Modal end -->
-							</div>
-							
-                            <div class="col-sm-6 col-md-3 isotope-item app-development">
-								<div class="image-box">
-									<div class="overlay-container">
-										<img src="images/portfolio-16.jpg" alt="">
-										<a class="overlay" data-toggle="modal" data-target="#project-16">
-											<i class="fa fa-search-plus"></i>
-											<span>PHOTOSHOP</span>
-										</a>
-									</div>
-									<a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-16">영화제 포스터 공모전 출품작</a>
-								</div>
-								<!-- Modal -->
-								<div class="modal fade" id="project-16" tabindex="-1" role="dialog" aria-labelledby="project-5-label" aria-hidden="true">
-									<div class="modal-dialog modal-lg">
-										<div class="modal-content">
-											<div class="modal-header">
-												<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-												<h4 class="modal-title" id="project-5-label">영화제 포스터 공모전 출품작</h4>
-											</div>
-											<div class="modal-body">
-												<h3>영화제 포스터 공모전 출품작</h3>
-												<div class="row">
-													<div class="col-md-6">
-                                                    	<p>영화제 포스터 공모전 출품작 입니다.</p>
-														<p>시상식의 권위를 나타내기 위해 상패와 비슷한 골드 컬러와 네이비컬러를 사용하여 확실한 대비를 주었고, 양쪽에 있는 금색 띠는 금빛물결을 연상케 하도록 의도하였습니다. 또한 영화제 시상식이라는 것을 나타내기 위해 배경에 필름을 넣어 처리하였습니다. 또 상단에는 별을 넣어 시상식이 더욱 찬란한 느낌이 나도록 하였습니다.</p>
-														<p>사용한 프로그램 : 포토샵</p>
-													</div>
-													<div class="col-md-6">
-														<img src="images/portfolio-16.jpg" alt="">
-													</div>
-												</div>
-											</div>
-											<div class="modal-footer">
-												<button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- Modal end -->
-							</div>
-							
+.</p>
+                      <a href="#" class="vs_more">
+                          <span class="more_txt">learn more</span>
+                          <span class="more_arrow"></span>
+                      </a>
+                  </div>
+              </li>
+              <li class="item2">
+                 <div class="tit_box">
+                      <h3 class="vs_tit">Chapter 2. 공상가의 방</h3>
+                      <p class="vs_com">앤의 뛰어난 상상력은 처음으로 갖게 된 자신의 방의 모습이나 <br>그토록 입고 싶은 퍼프소매 옷을 상상할 때 더욱 빛을 발한다. 깜찍 발랄한 십대 소녀의 상상 속 방과 패션 아이템들을 엿볼 수 있는 기회. </p>
+                      <a href="" class="vs_more"> 
+                          <span class="more_txt">learn more</span>
+                          <span class="more_arrow"></span>
+                      </a>
+                  </div>
+              </li>
+              <li class="item3">
+                 <div class="tit_box">
+                      <h3 class="vs_tit">Chapter 3. 유령의 숲<br>
+   </h3>
+                      <p class="vs_com">저녁이 되면 하얀 옷을 입은 여자가 흐느끼며 시냇가를 걷고, 머리 없는 남자와 해골들이 노려보는 숲.
+사실은 모든 것이 평범하고 <br>조용한 에이번리에서 스릴을 느끼고 싶었던 앤과 다이애나가 만들어낸 이야기에 불과하지만, 사실은 정말 유령이 있는 걸지도?
 
-						</div>
-						<!-- portfolio items end -->
-					
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- section end -->
+</p>
+                      <a href="" class="vs_more">
+                          <span class="more_txt">learn more</span>
+                          <span class="more_arrow"></span>
+                      </a>
+                  </div>
+              </li>
+              <li class="item4">
+                 <div class="tit_box">
+                      <h3 class="vs_tit">Chapter 4. 영원한 친구 다이애나</h3>
+                      <p class="vs_com">앤이 가장 사랑하는 사람, 다이애나.
+처음 만나자마자 서로를 알아보았던 <br>두 사람의 엄숙한 우정을 엿볼 수 있는 이 곳에서 우리의 어린 시절 단짝을 추억해보자.
 
-	<div class="section translucent-bg bg-image-2 pb-clear">
-			<div class="container object-non-visible" data-animation-effect="fadeIn">
-				<h1 id="clients" class="title text-center" style="font-family: 'Righteous', cursive;">Skills</h1>
-				<div class="space"></div>
-				<div class="row">
-					<div class="col-md-4">
-						<div class="media testimonial">
-							<div class="media-left">
-								<img src="images/ps.png" alt="ps">
-							</div>
-							<div class="media-body">
-								<h3 class="media-heading">Photoshop</h3>
-								<blockquote>
-									<p>포토샵의 기능과 툴을 아주 능숙히 <br>다룰 수 있습니다.</p>
-									
-								</blockquote>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="media testimonial">
-							<div class="media-left">
-								<img src="images/ai.png" alt="ai">
-							</div>
-							<div class="media-body">
-								<h3 class="media-heading">Illustrator</h3>
-								<blockquote>
-									<p>일러스트의 기본적인 툴들을 다룰 수 있습니다.</p>
-									
-								</blockquote>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="media testimonial">
-							<div class="media-left">
-								<img src="images/dw.png" alt="dw">
-							</div>
-							<div class="media-body">
-								<h3 class="media-heading">Dreamweaver</h3>
-								<blockquote>
-									<p style="text-shadow:2px 1px 0 #0054a5;">드림위버의 기능을 사용할 수 있으며, 드림위버를 이용하여 하드 코딩을 할 수 있습니다.</p>
-									
-								</blockquote>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-4">
-						<div class="media testimonial">
-							<div class="media-left">
-								<img src="images/html5.png" alt="html5">
-							</div>
-							<div class="media-body">
-								<h3 class="media-heading" style="text-shadow:2px 1px 0 #0054a5;">Html5</h3>
-								<blockquote>
-									<p style="text-shadow:2px 1px 0 #0054a5;">Html5의 최신 기술을 사용할 수 있으며, 직접 코딩을 할 수 있습니다.</p>
-									
-								</blockquote>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="media testimonial">
-							<div class="media-left">
-								<img src="images/css3.png" alt="css3">
-							</div>
-							<div class="media-body">
-								<h3 class="media-heading">Css3</h3>
-								<blockquote>
-									<p>Html5로 코딩한 것을 Css를 이용하여 장식 할 수 있습니다.</p>
-									
-								</blockquote>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="media testimonial">
-							<div class="media-left">
-								<img src="images/js.png" alt="js">
-							</div>
-							<div class="media-body">
-								<h3 class="media-heading">jQuery</h3>
-								<blockquote>
-									<p style="text-shadow:2px 1px 0 #0054a5;">jQuery 플러그인을 사용하여 다양한 동작 구현을 할 수 있습니다.</p>
-									
-								</blockquote>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- section start -->
-			<!-- ================ -->
-			<div class="translucent-bg blue">
-				<div class="container">
-					<div class="list-horizontal">
-						<div class="row">
-							<div class="col-xs-3">
-								<div class="list-horizontal-item">
-									<img src="images/ppt.png" alt="ppt">
-								</div>
-							</div>
-							<div class="col-xs-3">
-								<div class="list-horizontal-item">
-									<img src="images/excel.png" alt="excel">
-								</div>
-							</div>
-							<div class="col-xs-3">
-								<div class="list-horizontal-item">
-									<img src="images/hwp.png" alt="hwp">
-								</div>
-							</div>
-							<div class="col-xs-3">
-								<div class="list-horizontal-item">
-									<img src="images/fz.png" alt="fz">
-								</div>
-							</div>
-							
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- section end -->
-		</div>
-		<!-- section end -->
+</p>
+                      <a href="" class="vs_more">
+                          <span class="more_txt">learn more</span>
+                          <span class="more_arrow"></span>
+                      </a>
+                  </div>
+              </li>
+              <li class="item5">
+                 <div class="tit_box">
+                      <h3 class="vs_tit">Chapter 5. 빨강머리</h3>
+                      <p class="vs_com">콤플렉스가 많은 앤이지만, 그 중에서도 가장 견딜 수 없는 것은 바로 빨강머리다. 앤은 상대가 누구든, 자신의 콤플렉스를 무례하게 지적하는 사람을 곱게 참고 넘긴 적이 없다<br>. 우리 마음속에 박혀있는 콤플렉스들을 앤처럼 시원하게 터뜨려 없애버리는 공간.
 
-		<!-- section end -->
+</p>
+                      <a href="" class="vs_more">
+                          <span class="more_txt">learn more</span>
+                          <span class="more_arrow"></span>
+                      </a>
+                  </div>
+              </li>
+              <li class="item6">
+                 <div class="tit_box">
+                      <h3 class="vs_tit">Chapter 6. 에이번리의 다정한 이웃들
+</h3>
+                      <p class="vs_com">에이번리는 자연환경이 무척 아름답기도 하지만, 그만큼 아름다운 사람들이 사는 곳이다.특히 총명하고 호기심 많은 앤을 좋은 방향으로 이끌어줄<br> 여성 롤모델들이 함께 살며 앤을 돌보고 이끌어준다.앤이 사랑을 가득 담아 그들을 직접 인터뷰함으로써 더 깊은 이야기를 들어볼 수 있는 기회.</p>
+                      <a href="" class="vs_more">
+                          <span class="more_txt">learn more</span>
+                          <span class="more_arrow"></span>
+                      </a>
+                  </div>
+              </li>
+              <li class="item7">
+                 <div class="tit_box">
+                      <h3 class="vs_tit">Chapter 7. 말할 수 없는 친구, 길버트</h3>
+                      <p class="vs_com">길버트는 ‘홍당무’라는 말 한 마디를 잘못하는 바람에 몇 년 동안 투명인간 취급을 받는 비운의 인물이지만,사실 학창시절 내내 앤과 엄청난 영향을 주고받는 친구다.<br> 두 사람이 서로 겉도는 모습을 지켜보는 안타까움 역시 원작의 재미 요소 중 하나.앤은 정말 길버트를어떻게 생각했을까? 그 속마음을 살짝 들여다볼 수 있는 공간.
 
-		<!-- section start -->
-		<!-- ================ -->
-		<div class="default-bg space">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2">
-						<p class="text-center" ></p>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- section end -->
+</p>
+                      <a href="" class="vs_more">
+                          <span class="more_txt">learn more</span>
+                          <span class="more_arrow"></span>
+                      </a>
+                  </div>
+              </li>
+          </ul>
+              <li class="item8">
+                 <div class="tit_box">
+                      <h3 class="vs_tit">Chapter 7. 말할 수 없는 친구, 길버트</h3>
+                      <p class="vs_com">앤은 대학에 진학하겠다는 당초의 계획과 달리 초록 지붕 집으로 돌아오게 된다. 그럼에도 불구하고 단지 꿈의 방향이 바뀐 것뿐이라며, 이 길모퉁이를 <br> 돌면 나타날 새로운 미래에 대한 기대감을 표현하는 앤. 다시 일상으로 돌아갈 우리 역시, 어떤 힘든 일이 닥치더라도 ‘앤의 길모퉁이’를 <br> 떠올릴 수 있기를 바라며 전시를 마무리하는 아웃트로
 
-		<!-- footer start -->
-		<!-- ================ -->
-		<footer id="footer">
+</p>
+                      <a href="" class="vs_more">
+                          <span class="more_txt">learn more</span>
+                          <span class="more_arrow"></span>
+                      </a>
+                  </div>
+              </li>
+   
+     <div class="btn_box2">
+         <ul class="btn_fr2">
+             <li class="lb_btn_fr item1 on"><button class="lb_btn">CHAPTER1</button></li>
+             <li class="lb_btn_fr item2"><button class="lb_btn">CHAPTER2</button></li>
+             <li class="lb_btn_fr item3"><button class="lb_btn">CHAPTER3</button></li>
+             <li class="lb_btn_fr item4"><button class="lb_btn">CHAPTER4</button></li>
+             <li class="lb_btn_fr item5"><button class="lb_btn">CHAPTER5</button></li>
+             <li class="lb_btn_fr item6"><button class="lb_btn">CHAPTER6</button></li>
+             <li class="lb_btn_fr item7"><button class="lb_btn">CHAPTER7</button></li>
+             <li class="lb_btn_fr item7"><button class="lb_btn">CHAPTER8</button></li>
+            </ul>
+        </div>  
+        </figure>
+    </section>
+   <section class="page sc_data" id="page3">
+ <div class="main-video parbase section">
+     
+     <div class="annestory">
+         <div class="inner_box">
+             <div class="movie">
+                 <a href="" class="viewmovie"><img src="./image/a7.png" alt=""><img src="./image/a7.png" alt=""></a>
+                 <div class="movie_frame"></div>
+             </div>
+             <div class="txtbox">
+                 <p class="ttitle">
+                   " ANNE VIEDO "
+                 </p>
+                 <div class="movietxt"> "다른게 뭐가 어때서?넌 독특해."<br><br>
+                     "독특한 건 이상하다는 뜻이야."<br><br>
+                     "난 뛰어나고 비범하다는 뜻 같은데?"<br><br></div>
+                     <p class="txt">
+                     <a href="https://www.youtube.com/embed/HpJG0HAlBq4"  target="_blank">빨간머리앤 전시회가 궁금하다면 <b>click</b></a></p>
+             </div>
+         </div>
+     </div>
+ </div>
+     
+          </section>
+   <section class="page sc_data" id="page4">
 
-			<!-- .footer start -->
-			<!-- ================ -->
-			<div class="footer section">
-				<div class="container">
-					<h1 class="title text-center" id="contact" style="font-family: 'Righteous', cursive;">Contact Me</h1>
-					<div class="space"></div>
-					<div class="row">
-						<div class="col-sm-6">
-							<div class="footer-content">
-								<p class="large"></p>
-								<ul class="list-icons">
-                                	<li><i class="fa fa-child pr-10"></i>심지선</li>
-									<li><i class="fa fa-map-marker pr-10"></i> 대전광역시</li>
-									<li><i class="fa fa-phone pr-10"></i>010-3739-9380</li>
-									<li><i class="fa fa-envelope-o pr-10"></i>wltjs1190@naver.com</li>
-                                    
-								</ul>
-							
-							</div>
-						</div>
-						<div class="col-sm-6">
-							<div class="footer-content">
-								<form role="form" id="footer-form">
-									<div class="form-group has-feedback">
-										<label class="sr-only" for="name2">Name</label>
-										<input type="text" class="form-control" id="name2" placeholder="Name" name="name2" required>
-										<i class="fa fa-user form-control-feedback"></i>
-									</div>
-									<div class="form-group has-feedback">
-										<label class="sr-only" for="email2">Email address</label>
-										<input type="email" class="form-control" id="email2" placeholder="Enter email" name="email2" required>
-										<i class="fa fa-envelope form-control-feedback"></i>
-									</div>
-									<div class="form-group has-feedback">
-										<label class="sr-only" for="message2">Message</label>
-										<textarea class="form-control" rows="8" id="message2" placeholder="Message" name="message2" required></textarea>
-										<i class="fa fa-pencil form-control-feedback"></i>
-									</div>
-									<input type="submit" value="Send" class="btn btn-default">
-								</form>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- .footer end -->
+       <ul class="thum_lst">
+           <li class="item1"><a href="">
+                   <div class="pic_box"></div>
+                   <h3 class="thum_tit">아트토크</h3>
+                   <p class="thum_com">작가의 작업 비하인드 스토리를 들을 수 있는 아트토크</p>
+               </a></li>
+           <li class="item2"><a href="">
+                   <div class="pic_box"></div>
+                   <h3 class="thum_tit">원데이 워크샵</h3>
+                   <p class="thum_com">작가가 직접 피드백을 주는 드로잉 원데이 워크숍  </p>
+               </a></li>
+           <li class="item3"><a href="">
+                   <div class="pic_box"></div>
+                   <h3 class="thum_tit">라이브 페인팅</h3>
+                   <p class="thum_com">작가의 작업 과정을 현장에서 볼 수 있는 라이브페인팅 </p>
+               </a></li>
+       </ul>
+       
+   </section>
+     <footer class="ft">
+      
+        <nav class="fnb">
+            <ul class="menu">
+                <li class="item1"><a href="">개인정보취급방침</a></li>
+                <li class="item2"><a href="">이용약관</a></li>
+                 <li class="item3"><a href="">이용약관</a></li>
+                
+            </ul>
+        </nav>
+        <ul class="company">
+            <li class="it1">
+                <ul class="com_lst"> 
+                    <li>MEDIA N ART Inc.  </li>
+                    <li>지성욱 SungWook Jee </li>
+                    <li>사업자등록번호 : 261-81-07403 </li>
+                </ul>
+            </li>
+            <li class="it2">
+                <ul class="com_lst">
+                    <li>서울특별시 성동구 서울숲2길 32-14 </li>
+                    <li>전화번호 : 1522-1796 </li>
+                    <li>이메일 : medianart@mnart.co.kr </li>
+                </ul>
+            </li>
+        
+        </ul>
+        <p class="copyright">Copyright &copy; 2020 ANNE All rights reserved.</p>
+    </footer>
+</body>
 
-			<!-- .subfooter start -->
-			<!-- ================ -->
-			<div class="subfooter">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-12">
-                        	<div style="width:11%; margin-left:46.7%; margin-bottom:10px;"><a href="#"><img src="images/logo2.png" alt="logo"></a></div>
-							<p class="text-center" style="color:#fff; ">Copyright &copy; 2020 Dreaming by GilDong</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- .subfooter end -->
-
-		</footer>
-		<!-- footer end -->
-
-		<!-- JavaScript files placed at the end of the document so the pages load faster
-		================================================== -->
-		<!-- Jquery and Bootstap core js files -->
-		<script type="text/javascript" src="plugins/jquery.min.js"></script>
-		<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-
-		<!-- Modernizr javascript -->
-		<script type="text/javascript" src="plugins/modernizr.js"></script>
-
-		<!-- Isotope javascript -->
-		<script type="text/javascript" src="plugins/isotope/isotope.pkgd.min.js"></script>
-		
-		<!-- Backstretch javascript -->
-		<script type="text/javascript" src="plugins/jquery.backstretch.min.js"></script>
-
-		<!-- Appear javascript -->
-		<script type="text/javascript" src="plugins/jquery.appear.js"></script>
-
-		<!-- Initialization of Plugins -->
-		<script type="text/javascript" src="js/template.js"></script>
-
-		<!-- Custom Scripts -->
-		<script type="text/javascript" src="js/custom.js"></script>
-		
-        <!--스톱워치-->
-        <script src="js/flipclock/libs/base.js"></script>
-		<script src="js/flipclock/flipclock.js"></script>
-		<script src="js/flipclock/faces/counter.js"></script>
-		<script src="js/flipclock/faces/hourlycounter.js"></script>
-		<script src="js/flipclock/faces/dailycounter.js"></script>
-		<script src="js/flipclock/faces/minutecounter.js"></script>
-		<script src="js/flipclock/faces/twentyfourhourclock.js"></script>
-		<script src="js/flipclock/faces/twelvehourclock.js"></script>
-		
-        <script type="text/javascript">
-			var clock;
-			
-			$(document).ready(function() {
-				clock = $('.clock').FlipClock({
-					clockFace: 'TwentyFourHourClock'
-				});
-			});
-		</script>
-	</body>
 </html>
